@@ -24,8 +24,6 @@
 
 /* style  */
 body {
-    margin: 0px 12px;
-
     background-color: var(--background);
 
     overflow-y: scroll;
@@ -70,37 +68,47 @@ header p {
     text-align: center;
 }
 
+.line {
+    width: 1px;
+    height: 60%;
+
+    background-color: var(--main-color);
+}
+
 nav {
     z-index: 1;
     bottom: 24px;
-    position: fixed;
-
-    place-self: center;
-    height: max-content;
-    width: max-content;
+    position: sticky;
 
     padding: 8px;
 
     border-radius: 12px;
     border: 1px solid var(--border);
 
-    background-color: var(--primary);
-
-    display: flex;
-    gap: 24px;
+    background-color: #12131675;
+    backdrop-filter: blur(10px);
+    
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr 1fr max-content 1fr;
+    align-items: center;
+    gap: 12px;
 }
 
 .navBtn {
+    flex: 1;
+
     padding: 8px 12px;
 
     border-radius: 6px;
+
+    text-align: center;
 
     font-size: 14px;
     color: var(--text);
 }
 
 .navBtn:hover {
-    background-color: var(--border);
+    background-color: #FBFEFC10;
 }
 
 
@@ -276,8 +284,34 @@ form {
 
 
 
+@media screen and (min-width: 600px) {
+    nav {
+        justify-self: center;
+    }
+}
+
+
+
+
+
 @media screen and (max-width: 600px) {
+    
+    nav {
+        bottom: 0px;
+        position: sticky;
+
+        border-radius: 0px;
+        border: none;
+        border-top: 1px solid var(--border);
+
+        gap: 6px;
+    }
+
+    .navBtn {
+        font-size: 12px;
+    }
+
     .feed {
       grid-template-columns: 1fr;
     }
-  }
+}
