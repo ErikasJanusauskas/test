@@ -78,7 +78,7 @@ header p {
 nav {
     z-index: 1;
     bottom: 24px;
-    position: sticky;
+    position: fixed;
 
     padding: 8px;
 
